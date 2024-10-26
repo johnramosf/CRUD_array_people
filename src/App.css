@@ -1,42 +1,71 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.carousel-item img {
+  height: calc(100vh - 80px); /* Ajusta el 80px al tamaño de margen inferior que desees */
+  object-fit: cover;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.carousel-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.carousel-container .carousel {
+  flex: 1 0 auto;
 }
 
+.carousel-caption {
+  background-color: rgba(139, 69, 19, 0.7); /* Fondo café con transparencia */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Clase personalizada para definir el tamaño de la card */
+.custom-card-size {
+  width: 500px;
+  height: 600px;
+  overflow: hidden; /* Evita el desbordamiento del contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Clase personalizada para asegurarse de que la imagen se ajuste a la card */
+.custom-img-size {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin recortarse ni distorsionarse */
+}
+
+/* Asegura que el texto quede dentro del 30% restante del espacio */
+.card-body {
+  height: 30%; /* Ocupa el 30% restante para el texto */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden; /* Previene que el texto se desborde */
+}
+
+/* Aseguramos que la card tenga una altura fija */
 .card {
-  padding: 2em;
+  height: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+/* Aseguramos que la imagen ocupe el espacio adecuado */
+.fixed-img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover; /* Asegura que la imagen se ajuste al tamaño sin distorsionarse */
+}
+
+/* Clase para asegurar que el contenedor tenga un scroll vertical y una altura máxima del 80% de la ventana */
+.scrollable-container {
+  max-height: 80vh;
+  overflow-y: scroll;
 }
